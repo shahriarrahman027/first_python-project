@@ -40,7 +40,7 @@ else:
             print(Bold + lebel_color + "Department : " + value_color+department+Reset)
             print("           ")
             print(Bold+tag_color+"             Stay Safe,Stay Happy!             "+Reset)
-            print("           ")
+            print("            ")
     else: 
         print("Invalid Id format")
 
