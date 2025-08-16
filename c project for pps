@@ -1,0 +1,49 @@
+//week 1:
+// Paste the main.c code here
+#include <stdio.h>
+
+// --- THIS IS FOR TEMPORARY PLACEHOLDER FUNCTION DEFINITIONS ---
+// we have to Remove these later when real functions are added.
+void addExpense() { printf("Add Expense (Placeholder)\n"); }
+void listExpenses() { printf("List Expenses (Placeholder)\n"); }
+void searchExpense() { printf("Search Expense (Placeholder)\n"); }
+void deleteExpense() { printf("Delete Expense (Placeholder)\n"); }
+void showTotal() { printf("Show Summary (Placeholder)\n"); }
+void saveToFile() { printf("Save to File (Placeholder)\n"); }
+void loadFromFile() { printf("Loading from file... (Placeholder)\n"); }
+
+// --- THIS IS FOR MAIN MENU PROGRAM ---
+int main(void) {
+    int choice;
+    loadFromFile();  // it will be runs once at start
+
+    do {
+        printf("\n===== Daily Expense Tracker =====\n");
+        printf("1. Add Expense\n");
+        printf("2. View Expenses\n");
+        printf("3. Search Expense\n");
+        printf("4. Delete Expense\n");
+        printf("5. Show Summary\n");
+        printf("6. Save and Exit\n");
+        printf("Enter your choice: ");
+        if (scanf("%d", &choice) != 1) {
+            // handle non-number input
+            while (getchar() != '\n'); // clear input buffer
+            printf("Invalid input! Please enter a number.\n");
+            choice = 0; // force repeat
+            continue;
+        }
+
+        switch(choice) {
+            case 1: addExpense(); break;
+            case 2: listExpenses(); break;
+            case 3: searchExpense(); break;
+            case 4: deleteExpense(); break;
+            case 5: showTotal(); break;
+            case 6: saveToFile(); printf("Exiting...\n"); break;
+            default: printf("Invalid choice! Try again.\n");
+        }
+    } while (choice != 6);
+
+    return 0;
+}
